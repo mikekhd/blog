@@ -3,7 +3,11 @@ Blog::Application.routes.draw do
   resources :atoms
   root :to => 'home#page'
   get "home/page"
-
+   controller :sessions do
+    get  'login'  =>  :new
+    post 'login'  =>  :create
+    get  'logout' =>  :destroy
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

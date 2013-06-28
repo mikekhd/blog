@@ -11,8 +11,11 @@ class Ability
        end
        if user.admin?
          can :manage, :all
-    #   else
-    #     can :read, :all
+       end
+       if user.author?
+         can :edit, atom
+       else
+         can :read, all
        end
     #
     # The first argument to `can` is the action you are giving the user 

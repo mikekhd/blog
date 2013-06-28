@@ -1,0 +1,11 @@
+<h1><%= notice %></h1>
+<br>
+<br> 
+<h2>Sign in</h2>
+<%= simple_form_for :session do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.button :submit , "Login" %>
+    <p>Not registered yet! <%= link_to "Register now!", new_user_path %></p>
+<% end %>
