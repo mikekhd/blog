@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @atom.title %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @atom.story %>
+</p>
+
+
+<%= link_to 'Edit', edit_atom_path(@atom) %> |
+<%= link_to 'Back', atoms_path %>

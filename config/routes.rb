@@ -1,7 +1,7 @@
 Blog::Application.routes.draw do
   resources :users
+  resources :atoms
   root :to => 'home#page'
-
   get "home/page"
 
   # The priority is based upon order of creation:
