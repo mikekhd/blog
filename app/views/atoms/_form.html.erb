@@ -2,8 +2,11 @@
   <div class="field-inputs">
     <%= f.input :title %><br />
     <%= f.input :story %><br />
-    <%= f.check_box :approved %> Approved
-    <%= f.association :users, as: :radio_buttons if current_user && current_user.admin%>
+   
+    <% if can? :approve, @atom %>
+        <%= f.check_box :approved %> Approved
+        <%= f.association :users %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

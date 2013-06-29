@@ -3,7 +3,7 @@ class CreateAtoms < ActiveRecord::Migration
     create_table :atoms do |t|
       t.string :title
       t.text :story
-
+  
       t.timestamps
     end
   end

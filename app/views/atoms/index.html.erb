@@ -1,4 +1,4 @@
-<h1>Listing atoms</h1>
+<h3>Listing atoms</h3>
 
 <table>
   <tr>
@@ -14,12 +14,13 @@
     <td><%= atom.title %></td>
     <td><%= atom.story %></td>
     <td><%= link_to 'Show', atom %></td>
-    <td><%= link_to 'Edit', edit_atom_path(atom) %></td>
-    <td><%= link_to 'Destroy', atom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :update, atom %>
+      <td><%= link_to 'Edit', edit_atom_path(atom) %></td>
+    <% end %>  
+    <% if can? :destroy, atom %>
+      <td><%= link_to 'Destroy', atom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Atom', new_atom_path %>

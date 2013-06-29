@@ -1,14 +1,13 @@
 class AtomsController < ApplicationController
+  load_and_authorize_resource
   # GET /atoms
   # GET /atoms.json
   def index
-    @atoms = Atom.all
   end
 
   # GET /atoms/1
   # GET /atoms/1.json
   def show
-    @atom = Atom.find(params[:id])
   end
 
   # GET /atoms/new
